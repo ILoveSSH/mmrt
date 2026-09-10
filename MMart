@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Monkey Mart" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>MMart</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ILoveSSH/TFS@main/strn.png">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+
+      #gameFrame {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="gameFrame" src="https://raw.githack.com/ILoveSSH/mmrt/refs/heads/master/index.html" allowfullscreen></iframe>
+    <script>
+      // AutoResizer 
+      function resizeGame() {
+        const iframe = document.getElementById('gameFrame');
+        iframe.style.width = window.innerWidth + 'px';
+        iframe.style.height = window.innerHeight + 'px';
+      }
+      resizeGame();
+      window.addEventListener('resize', resizeGame);
+      window.addEventListener('orientationchange', () => {
+        setTimeout(resizeGame, 100);
+      });
+    </script>
+  </body>
+</html>
